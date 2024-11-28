@@ -3,10 +3,10 @@ import React, { Component, Fragment } from 'react';
 import Post from '../../components/Feed/Post/Post';
 import Button from '../../components/Button/Button';
 import FeedEdit from '../../components/Feed/FeedEdit/FeedEdit';
-import Input from '../../components/Form/Input/Input';
+// import Input from '../../components/Form/Input/Input';
 import Paginator from '../../components/Paginator/Paginator';
 import Loader from '../../components/Loader/Loader';
-import ErrorHandler from '../../components/ErrorHandler/ErrorHandler';
+// import ErrorHandler from '../../components/ErrorHandler/ErrorHandler';
 import './Feed.css';
 
 class Feed extends Component {
@@ -215,7 +215,7 @@ class Feed extends Component {
                     onFinishEdit={this.finishEditHandler}
                 />
                 <section className="feed__status">
-                    <form onSubmit={this.statusUpdateHandler}>
+                    {/* <form onSubmit={this.statusUpdateHandler}>
                         <Input
                             type="text"
                             placeholder="Your status"
@@ -226,7 +226,7 @@ class Feed extends Component {
                         <Button mode="flat" type="submit">
                             Update
                         </Button>
-                    </form>
+                    </form> */}
                 </section>
                 <section className="feed__control">
                     <Button mode="raised" design="accent" onClick={this.newPostHandler}>
