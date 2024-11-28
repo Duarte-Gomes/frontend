@@ -27,6 +27,11 @@ const POST_FORM = {
     value: '',
     valid: false,
     touched: false,
+  },
+  active: {
+    value: true,
+    valid: false,
+    touched: false,
   }
 };
 
@@ -62,6 +67,11 @@ class FeedEdit extends Component {
         category: {
           ...prevState.postForm.category,
           value: this.props.selectedPost.category,
+          valid: true
+        },
+        active: {
+          ...prevState.postForm.active,
+          value: this.props.selectedPost.active,
           valid: true
         }
       };
@@ -130,7 +140,8 @@ class FeedEdit extends Component {
       title: this.state.postForm.title.value,
       image: this.state.postForm.image.value,
       content: this.state.postForm.content.value,
-      category: this.state.postForm.category.value
+      category: this.state.postForm.category.value,
+      active: this.state.postForm.active.value
     };
     this.props.onFinishEdit(post);
     this.setState({
@@ -152,6 +163,16 @@ class FeedEdit extends Component {
           isLoading={this.props.loading}
         >
           <form>
+          <Input
+              id="active"
+              label="Active"
+              control="input"
+              onChange={this.postInputChangeHandler}
+              onBlur={this.inputBlurHandler.bind(this, 'active')}
+              valid={this.state.postForm['active'].valid}
+              touched={this.state.postForm['active'].touched}
+              value={this.state.postForm['active'].value}
+            />
             <Input
               id="title"
               label="Title"

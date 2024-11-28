@@ -115,6 +115,7 @@ class Feed extends Component {
         formData.append('content', postData.content);
         formData.append('image', postData.image);
         formData.append('category', postData.category);
+        formData.append('active', postData.active);
         let url = 'http://localhost:8080/feed/post';
         let method = 'POST';
         if (this.state.editPost) {
@@ -140,7 +141,8 @@ class Feed extends Component {
                     content: resData.post.content,
                     creator: resData.post.creator,
                     createdAt: resData.post.createdAt,
-                    category: resData.post.category
+                    category: resData.post.category,
+                    active: resData.post.active,
                 };
                 this.setState((prevState) => {
                     let updatedPosts = [...prevState.posts];
@@ -259,6 +261,7 @@ class Feed extends Component {
                                     image={post.imageUrl}
                                     content={post.content}
                                     category={post.category}
+                                    active={post.active}
                                     onStartEdit={this.startEditPostHandler.bind(this, post._id)}
                                     onDelete={this.deletePostHandler.bind(this, post._id)}
                                 />

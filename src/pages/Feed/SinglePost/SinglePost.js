@@ -13,6 +13,7 @@ class SinglePost extends Component {
         image: '',
         content: '',
         category: '',
+        active: ''
     };
 
     componentDidMount() {
@@ -33,6 +34,7 @@ class SinglePost extends Component {
                     date: new Date(resData.post.createdAt).toLocaleDateString('en-US'),
                     content: resData.post.content,
                     category: resData.post.category,
+                    active: resData.post.active,
                 });
             })
             .catch((err) => {
@@ -47,6 +49,7 @@ class SinglePost extends Component {
                 <h2>
                     Created by {this.state.author} on {this.state.date}
                 </h2>
+                <p>{this.state.active}</p>
                 <div className="single-post__image">
                     <Image contain imageUrl={this.state.image} />
                 </div>

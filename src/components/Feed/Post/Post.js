@@ -15,6 +15,7 @@ function post(props) {
                     Categoria: {props.category}
                 </h3>
                 <h1 className="post__title">{props.title}</h1>
+                <h1 className="post__title">{props.active}</h1>
             </header>
             <div className="post__image">
               <Image imageUrl= {teste} contain />
