@@ -33,7 +33,7 @@ const POST_FORM = {
 class FeedEdit extends Component {
   state = {
     postForm: POST_FORM,
-    formIsValid: false,
+    // formIsValid: false,
     imagePreview: null
   };
 
@@ -120,7 +120,7 @@ class FeedEdit extends Component {
   cancelPostChangeHandler = () => {
     this.setState({
       postForm: POST_FORM,
-      formIsValid: false
+      // formIsValid: false
     });
     this.props.onCancelEdit();
   };
@@ -135,7 +135,7 @@ class FeedEdit extends Component {
     this.props.onFinishEdit(post);
     this.setState({
       postForm: POST_FORM,
-      formIsValid: false,
+      // formIsValid: false,
       imagePreview: null
     });
   };
